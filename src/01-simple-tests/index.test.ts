@@ -21,13 +21,13 @@ describe('simpleCalculator tests', () => {
     expect(result).toBe(4);
   });
 
-  test('should divide two numbers', () => {
+  test('should exponentiate two numbers', () => {
     const result = simpleCalculator({
-      a: 10,
-      b: 2,
-      action: Action.Divide,
+      a: 3,
+      b: 4,
+      action: Action.Exponentiate,
     });
-    expect(result).toBe(5);
+    expect(result).toBe(81);
   });
 
   test('should return null for invalid action', () => {
