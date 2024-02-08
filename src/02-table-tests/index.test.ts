@@ -13,10 +13,11 @@ const testCases = [
 ];
 
 describe('simpleCalculator', () => {
-  testCases.forEach(({ a, b, action, expected }) => {
-    test(`should calculate ${a} ${action} ${b} correctly`, () => {
+  test.each(testCases)(
+    'should calculate $a $action $b correctly',
+    ({ a, b, action, expected }) => {
       const result = simpleCalculator({ a, b, action });
       expect(result).toBe(expected);
-    });
-  });
+    },
+  );
 });
